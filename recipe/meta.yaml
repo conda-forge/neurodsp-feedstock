@@ -1,18 +1,18 @@
 {% set name = "neurodsp" %}
-{% set version = "2.0.0" %}
+{% set version = "2.1.0" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 046f14564a0d7f7982bdbafdc7c0c374f96c9625ec8199ee665663bf0cd47642
+  sha256: 4ec713c3dda5bc3af7facf5b81ee5374fe520b131e71cc16e66f02834a07ff7f
 
 build:
   number: 0
   noarch: python
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -40,13 +40,13 @@ test:
     - pytest
 
 about:
-  home: "https://github.com/neurodsp-tools/neurodsp"
+  home: https://github.com/neurodsp-tools/neurodsp
   license: Apache-2.0
   license_family: Apache
   license_file: LICENSE
-  summary: "Digital signal processing for neural time series."
-  doc_url: "https://neurodsp-tools.github.io/neurodsp/"
-  dev_url: "https://github.com/neurodsp-tools/neurodsp"
+  summary: Digital signal processing for neural time series.
+  doc_url: https://neurodsp-tools.github.io/neurodsp/
+  dev_url: https://github.com/neurodsp-tools/neurodsp
 
 extra:
   recipe-maintainers:
