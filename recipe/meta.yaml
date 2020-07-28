@@ -36,8 +36,6 @@ test:
     - neurodsp.tests
     - neurodsp.timefrequency
     - neurodsp.utils
-  requires:
-    - pytest
 
 about:
   home: https://github.com/neurodsp-tools/neurodsp
