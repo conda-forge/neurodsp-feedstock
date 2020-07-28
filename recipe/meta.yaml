@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/{{ name[0] }}-tools/{{ name[0] }}/archive/{{ version }}.tar.gz
+  url: https://github.com/neurodsp-tools/neurodsp/archive/{{ version }}.tar.gz
   sha256: 13475293ac2036e4a469c3904a2ad588ebc65eab2606294937f281d9bc6cea4f
 
 build:
