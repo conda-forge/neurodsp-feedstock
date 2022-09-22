@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/neurodsp-tools/neurodsp/archive/{{ version }}.tar.gz
-  sha256: 23438686e32a07da78021e77caea533c7d1de743c4012871564ea4ab69c1fefe
+  sha256: acdfef6d990f16bd488e11e36d05f58f282079f6c4f17e40f85a0ac5f5713805
 
 build:
   number: 0
