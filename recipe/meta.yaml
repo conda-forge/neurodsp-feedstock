@@ -1,5 +1,5 @@
 {% set name = "neurodsp" %}
-{% set version = "2.1.0" %}
+{% set version = "2.2.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/neurodsp-tools/neurodsp/archive/{{ version }}.tar.gz
-  sha256: 13475293ac2036e4a469c3904a2ad588ebc65eab2606294937f281d9bc6cea4f
+  sha256: acdfef6d990f16bd488e11e36d05f58f282079f6c4f17e40f85a0ac5f5713805
 
 build:
   number: 0
@@ -27,6 +27,7 @@ requirements:
 test:
   imports:
     - neurodsp
+    - neurodsp.aperiodic
     - neurodsp.burst
     - neurodsp.filt
     - neurodsp.plts
