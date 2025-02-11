@@ -1,5 +1,5 @@
 {% set name = "neurodsp" %}
-{% set version = "2.2.0" %}
+{% set version = "2.3.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/neurodsp-tools/neurodsp/archive/{{ version }}.tar.gz
-  sha256: acdfef6d990f16bd488e11e36d05f58f282079f6c4f17e40f85a0ac5f5713805
+  sha256: 27c9f8e5f0cf51ba6904be29d7934b46819d9f8d243307348aff960766101aa1
 
 build:
   number: 0
