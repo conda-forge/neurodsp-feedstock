@@ -43,7 +43,7 @@ test:
     - neurodsp.utils
   commands:
     - pip check
-    - python -c "import neurodsp; assert neurodsp.__version == '{{ version }}', neurodsp.__version"
+    - python -c "import neurodsp; assert neurodsp.__version__ == '{{ version }}', neurodsp.__version__"
 
 about:
   home: https://github.com/neurodsp-tools/neurodsp
