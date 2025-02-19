@@ -12,14 +12,14 @@ source:
 build:
   number: 0
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python >=3.5
+    - python {{ python_min }}
     - pip
+    - setuptools
   run:
-    - python >=3.5
+    - python >={{ python_min }}
     - numpy
     - scipy
     - matplotlib-base
@@ -37,6 +37,12 @@ test:
     - neurodsp.tests
     - neurodsp.timefrequency
     - neurodsp.utils
+  requires:
+    - python {{ python_min }}
+    - pip
+  commands:
+    - pip check
+    - python -c "import neurodsp; assert neurodsp.__version == '{{ version }}', neurodsp.__version"
 
 about:
   home: https://github.com/neurodsp-tools/neurodsp
@@ -50,3 +56,4 @@ about:
 extra:
   recipe-maintainers:
     - ryanhammonds
+    - larsoner
