@@ -25,6 +25,9 @@ requirements:
     - matplotlib-base
 
 test:
+  requires:
+    - python {{ python_min }}
+    - pip
   imports:
     - neurodsp
     - neurodsp.aperiodic
@@ -37,9 +40,6 @@ test:
     - neurodsp.tests
     - neurodsp.timefrequency
     - neurodsp.utils
-  requires:
-    - python {{ python_min }}
-    - pip
   commands:
     - pip check
     - python -c "import neurodsp; assert neurodsp.__version == '{{ version }}', neurodsp.__version"
