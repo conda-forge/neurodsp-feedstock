@@ -1,5 +1,5 @@
 {% set name = "neurodsp" %}
-{% set version = "2.2.0" %}
+{% set version = "2.3.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/neurodsp-tools/neurodsp/archive/{{ version }}.tar.gz
-  sha256: acdfef6d990f16bd488e11e36d05f58f282079f6c4f17e40f85a0ac5f5713805
+  sha256: 27c9f8e5f0cf51ba6904be29d7934b46819d9f8d243307348aff960766101aa1
 
 build:
   number: 0
@@ -16,15 +16,19 @@ build:
 
 requirements:
   host:
-    - python >=3.5
+    - python {{ python_min }}
     - pip
+    - setuptools
   run:
-    - python >=3.5
+    - python >={{ python_min }}
     - numpy
     - scipy
     - matplotlib-base
 
 test:
+  requires:
+    - python {{ python_min }}
+    - pip
   imports:
     - neurodsp
     - neurodsp.aperiodic
@@ -37,6 +41,9 @@ test:
     - neurodsp.tests
     - neurodsp.timefrequency
     - neurodsp.utils
+  commands:
+    - pip check
+    - python -c "import neurodsp; assert neurodsp.__version__ == '{{ version }}', neurodsp.__version__"
 
 about:
   home: https://github.com/neurodsp-tools/neurodsp
@@ -50,3 +57,4 @@ about:
 extra:
   recipe-maintainers:
     - ryanhammonds
+    - larsoner
